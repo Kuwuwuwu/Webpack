@@ -10,9 +10,14 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    watchFiles: ['src/**/*'],
     hot: true,
+    liveReload: true,
     open: true,
+    port: 8080,
   },
   module: {
     rules: [
