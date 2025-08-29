@@ -1,6 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+module.exports = {
+  // ... твоя конфігурація
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'server', // або 'static', 'json', 'disabled'
+      openAnalyzer: true,     // автоматично відкриє браузер
+    }),
+  ],
+};
 
 module.exports = {
   entry: './src/scripts/index.ts',
