@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+
 module.exports = {
   // ... твоя конфігурація
   plugins: [
@@ -14,12 +15,16 @@ module.exports = {
 };
 
 module.exports = {
-  entry: './src/scripts/index.ts',
+  entry: './src/scripts/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'], 
+  },
+
   mode: 'development',
   devServer: {
     static: {
